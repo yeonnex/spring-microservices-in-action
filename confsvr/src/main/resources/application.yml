@@ -1,0 +1,40 @@
+example:
+  property: "I AM IN THE DEFAULT"
+
+server:
+  port: 8888
+
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+    use-legacy-processing: true # unable to load config data 가 뜬다면 추가
+
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgresSQLDialect
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/eagle_eye_local
+    username: postgres
+    password: postgres
+
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        native:
+          search-locations: file:///Users/yeonnex/Study/spmia/confsvr/src/main/resources/config/licensingservice
+
+  profiles:
+    active: native
+
+
+
+
+
+

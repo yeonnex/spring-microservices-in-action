@@ -1,0 +1,2 @@
+# 아무것도 정의하지 않는다면, http://localhost:8888/licensingservice/prod 요청시
+# default 설정 json 을 반환하게 된다.
