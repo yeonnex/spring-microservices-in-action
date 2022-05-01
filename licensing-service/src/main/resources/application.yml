@@ -1,8 +1,18 @@
+spring:
+  application:
+    name: licensingservice
+  profiles:
+    active: default # 서비스가 실행할 기본 프로파일 설정
+
+  config:
+    import: configserver:http://localhost:8888
+    use-legacy-processing: true # unable to load config data 가 뜬다면 추가
+
 management:
   endpoints:
     web:
       exposure:
-        include: "health" # 또는 모두 허용 "*" http://localhost:8080/actuator/health 요청시 살아있다면 {"status": "UP"} 반환
+        include: "*" # web 키 depth 를 더하여 모든 엔드포인트에 접근 가능. 모두 허용 "health" http://localhost:8080/actuator/health 요청시 살아있다면 {"status": "UP"} 반환
 
   endpoint:
     health:
