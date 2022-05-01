@@ -3,3 +3,7 @@ management:
     web:
       exposure:
         include: "health" # 또는 모두 허용 "*" http://localhost:8080/actuator/health 요청시 살아있다면 {"status": "UP"} 반환
+
+  endpoint:
+    health:
+      show-details: always
