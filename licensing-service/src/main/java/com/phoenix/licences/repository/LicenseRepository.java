@@ -13,4 +13,3 @@ public interface LicenseRepository extends CrudRepository<License, String> {
     List<License> findLicenseByOrganizationId(String id);
     License findLicenseByOrganizationIdAndLicenseId(String organizationId, String licenseId);
 }
-가

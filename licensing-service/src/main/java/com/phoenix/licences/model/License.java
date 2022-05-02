@@ -1,6 +1,5 @@
 package com.phoenix.licences.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

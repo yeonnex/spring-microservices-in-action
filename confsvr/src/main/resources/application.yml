@@ -1,37 +1,17 @@
-example:
-  property: "I AM IN THE DEFAULT"
+
 
 server:
   port: 8888
 
 spring:
-  config:
-    import: optional:configserver:http://localhost:8888
-    use-legacy-processing: true # unable to load config data 가 뜬다면 추가
-
-
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgresSQLDialect
-
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/eagle_eye_local
-    username: postgres
-    password: postgres
-
   cloud:
     config:
       server:
-        bootstrap: true
-        native:
-          search-locations: file:///Users/yeonnex/Study/spmia/confsvr/src/main/resources/config/licensingservice
-
-  profiles:
-    active: native
+        encrypt:
+          enabled: false
+        git: # 스프링 클라우드 컨피그에 백엔드 저장소로 깃을 사용한다고 전달한다
+          uri: https://github.com/yeonnex/config-repo/
+          search-paths: licensingservice, organizationservice # 스프링 클라우드 컨피그에 구성 파일을 찾을 깃 경로를 전달한다
 
 
 
