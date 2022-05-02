@@ -1,5 +1,5 @@
 example:
-    property: HELLOWORLD
+    property: IAmStringFromSpringCloudConfigServer
 redis:
     port: 6379
     server: redis
@@ -8,16 +8,15 @@ signing:
 spring:
     database:
         driverClassName: org.postgresql.Driver
-#    datasource:
-#        password: '"{cipher}4788dfe1ccbe6485934aec2ffeddb06163ea3d616df5fd75be96aadd4df1da91"'
-#        platform: '"postgres"'
-#        testWhileIdle: '"true"'
-#        url: '"jdbc:postgresql://database:5432/eagle_eye_local"'
-#        username: '"postgres"'
-#        validationQuery: '"SELECT 1"'
-#    jpa:
-#        database: '"POSTGRESQL"'
-#        properties:
-#            hibernate:
-#                dialect: '"org.hibernate.dialect.PostgreSQLDialect"'
-#        show-sql: '"true"'
+    datasource:
+        password: postgres
+        platform: postgres
+        url: jdbc:postgresql://localhost:5432/eagle_eye_local
+        username: postgres
+    jpa:
+        database: POSTGRESQL
+        database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+        show-sql: true
+        generate-ddl: true
+        hibernate:
+            ddl-auto: create
