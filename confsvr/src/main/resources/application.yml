@@ -10,7 +10,7 @@ spring:
         encrypt:
           enabled: false
         git: # 스프링 클라우드 컨피그에 백엔드 저장소로 깃을 사용한다고 전달한다
-          uri: https://github.com/yeonnex/config-repo/
+          uri: https://github.com/yeonnex/config-repo
           search-paths: licensingservice, organizationservice # 스프링 클라우드 컨피그에 구성 파일을 찾을 깃 경로를 전달한다
 
 
